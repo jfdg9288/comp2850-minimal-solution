@@ -64,6 +64,20 @@ select:focus {
   outline-offset: 2px;
 }
 
+/* Stronger focus for task action buttons */
+.task-actions button:focus,
+.task-actions a:focus {
+  background-color: #4A90E2;
+  color: #ffffff;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #4A90E2;
+}
+
+/* Distinct highlight for focused task rows */
+.task-item:focus-within {
+  background-color: #e3f2fd;      /* light blue highlight */
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
 /* ========================================
    Status/Alert Regions (WCAG 4.1.3)
    ======================================== */
@@ -214,6 +228,7 @@ select:focus {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
 }
+
 
 /* ========================================
    Responsive Design

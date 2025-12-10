@@ -3,5 +3,16 @@
     {% include "tasks/_item.peb" with {"task": task} %}
   {% endfor %}
 </ul>
-<p id="result-count" class="visually-hidden">Showing {{ page.items|length }} of {{ page.totalItems }}{% if query %} matching "{{ query }}"{% endif %}</p>
+<p id="result-count"
+   role="status"
+   aria-live="polite"
+   class="filter-status">
+  {% if query and page.items|length > 0 %}
+    Showing {{ page.items|length }} task(s) matching "{{ query }}".
+  {% elseif query %}
+    No tasks found matching "{{ query }}".
+  {% else %}
+    Showing all {{ page.totalItems }} task(s).
+  {% endif %}
+</p>
 
