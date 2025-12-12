@@ -15,4 +15,3 @@
     Showing all {{ page.totalItems }} task(s).
   {% endif %}
 </p>
-
